@@ -65,7 +65,7 @@ load_lab <- function(lab) {
   viewer(tf)
 
   # auto update
-  # try(devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE), silent = TRUE)
+  mobilizr::update_mobilizr();
 }
 
 #' @rdname load_lab
@@ -74,7 +74,6 @@ load_labs <- function(lab) {
   # Alias to avoid problems with load_lab vs. load_labs in the written
   # curriculum
   load_lab(lab)
-  mobilizr::update_mobilizr()
 }
 
 .format_lab_title <- function (x) {
@@ -350,8 +349,15 @@ load_pd <- function(lab) {
 #' Update Mobilizr
 #' @export
 update_mobilizr <- function() {
-  print("Going to update mobilizr")
-  try({devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=FALSE,force=FALSE);detach("package:mobilizr", unload=TRUE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);  
-  print("Finish to update mobilizr")
+  oldmobilizrinfo=devtools::package_info("mobilizr")['mobilizr','source']
+  try({
+    devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=FALSE,force=FALSE);
+  }, silent = TRUE);  
+  newmobilizrinfo=devtools::package_info("mobilizr")['mobilizr','source']
+  if(newmobilizrinfo!=oldmobilizrinfo){
+    detach("package:mobilizr", unload=TRUE);
+    suppressPackageStartupMessages(library("mobilizr"));
+    print("Finish to update mobilizr")
+  }
 }
 
