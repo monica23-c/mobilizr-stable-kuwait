@@ -351,7 +351,7 @@ load_pd <- function(lab) {
 #' @export
 update_mobilizr <- function() {
   print("Going to update mobilizr")
-  try({devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=FALSE,force = TRUE);detach("package:mobilizr", unload=TRUE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);  
+  try({devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=FALSE,force=FALSE);detach("package:mobilizr", unload=TRUE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);  
   print("Finish to update mobilizr")
 }
 
