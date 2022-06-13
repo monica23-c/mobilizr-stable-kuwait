@@ -63,8 +63,8 @@ load_lab <- function(lab) {
 
   # Display HTML file in the viewer pane.
   viewer(tf)
-	
-  # auto update	
+
+  # auto update
   # try(devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE), silent = TRUE)
 }
 
@@ -110,7 +110,7 @@ load_labs <- function(lab) {
   #   lab_urls <- paste0('http://gh.IDSUCLA.org/ids_labs/',
   #                      .format_lab_title(lab_titles), '.html')
   # }
-  
+
   lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      .format_lab_title(lab_titles), '.html')
 
@@ -344,3 +344,11 @@ load_pd <- function(lab) {
   # logs the load_lab command correctly regardless of how the user selected a lab
   log_info(paste('load_pd(',lab,')', sep = ""))
 }
+
+
+#' Update Mobilizr
+#' @export
+update_mobilizr <- function() {
+  try({devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);
+}
+
