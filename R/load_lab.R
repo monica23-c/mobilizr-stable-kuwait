@@ -74,6 +74,7 @@ load_labs <- function(lab) {
   # Alias to avoid problems with load_lab vs. load_labs in the written
   # curriculum
   load_lab(lab)
+  mobilizr::update_mobilizr()
 }
 
 .format_lab_title <- function (x) {
@@ -350,7 +351,7 @@ load_pd <- function(lab) {
 #' @export
 update_mobilizr <- function() {
   print("Going to update mobilizr")
-  try({devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);
+  try({devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=FALSE);suppressPackageStartupMessages(library("mobilizr"));}, silent = TRUE);  
   print("finish to update mobilizr")
 }
 
