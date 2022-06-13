@@ -355,7 +355,7 @@ update_mobilizr <- function() {
   }, silent = TRUE);  
   newmobilizrinfo=devtools::package_info("mobilizr")['mobilizr','source']
   if(newmobilizrinfo!=oldmobilizrinfo){
-    print("Finish to update mobilizr, please wait")
+    print("Finish to update mobilizr, please wait");
     oldmobilizrinfo <<- oldmobilizrinfo;
     newmobilizrinfo <<- newmobilizrinfo;
     detach("package:mobilizr", unload=TRUE);
