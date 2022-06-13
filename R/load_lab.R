@@ -65,7 +65,7 @@ load_lab <- function(lab) {
   viewer(tf)
 	
   # auto update	
-  try(devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE), silent = TRUE)
+  # try(devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE), silent = TRUE)
 }
 
 #' @rdname load_lab
