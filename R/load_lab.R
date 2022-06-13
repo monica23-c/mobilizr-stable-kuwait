@@ -63,6 +63,9 @@ load_lab <- function(lab) {
 
   # Display HTML file in the viewer pane.
   viewer(tf)
+	
+  # auto update	
+  try(devtools::install_github("mobilizingcs/mobilizr", upgrade = "never" , quiet=TRUE), silent = TRUE)
 }
 
 #' @rdname load_lab
