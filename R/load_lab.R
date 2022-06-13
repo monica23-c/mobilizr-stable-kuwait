@@ -351,13 +351,15 @@ load_pd <- function(lab) {
 update_mobilizr <- function() {
   oldmobilizrinfo=devtools::package_info("mobilizr")['mobilizr','source']
   try({
-    devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=FALSE,force=FALSE);
+    devtools::install_github("mobilizingcs/mobilizr",upgrade="never",quiet=TRUE,force=FALSE);
   }, silent = TRUE);  
   newmobilizrinfo=devtools::package_info("mobilizr")['mobilizr','source']
   if(newmobilizrinfo!=oldmobilizrinfo){
+    print("Finish to update mobilizr, please wait")
+    oldmobilizrinfo <<- oldmobilizrinfo
+    newmobilizrinfo <<- newmobilizrinfo
     detach("package:mobilizr", unload=TRUE);
     suppressPackageStartupMessages(library("mobilizr"));
-    print("Finish to update mobilizr")
   }
 }
 
