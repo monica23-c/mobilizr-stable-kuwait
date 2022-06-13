@@ -360,8 +360,8 @@ update_mobilizr <- function() {
     newmobilizrinfo <<- newmobilizrinfo;
     detach("package:mobilizr", unload=TRUE);
     suppressPackageStartupMessages(library("mobilizr"));
-    print("old "+oldmobilizrinfo);
-    print("new "+newmobilizrinfo);
+    print(paste("old ",oldmobilizrinfo));
+    print(paste("new ",newmobilizrinfo));
     print("Finish to update mobilizr, finished")
   }
 }
