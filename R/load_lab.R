@@ -362,7 +362,7 @@ update_mobilizr <- function() {
     suppressPackageStartupMessages(library("mobilizr"));
     print(paste("old ",oldmobilizrinfo));
     print(paste("new ",newmobilizrinfo));
-    print("Finish to update mobilizr, finished.")
+    print("Finish to update mobilizr, finished!")
   }
 }
 
