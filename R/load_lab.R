@@ -65,7 +65,7 @@ load_lab <- function(lab) {
   viewer(tf)
 
   # auto update
-  mobilizr::update_mobilizr();
+  # mobilizr::update_mobilizr();
 }
 
 #' @rdname load_lab
